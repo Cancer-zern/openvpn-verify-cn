@@ -1,7 +1,7 @@
 # verify-cn
 OpenVPN verify CN (Windows 7/8/10, Windows Server 2012/2016/2019)
 
-Need to install .net Framework 4.6.1 or more
+Need to install .net Framework 4.6.1 or newer
 
 
 # OpenVPN server params
