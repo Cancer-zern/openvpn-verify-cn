@@ -1,0 +1,4 @@
+server1
+ntserver2
+NT: 00000000
+NT: 12345678
