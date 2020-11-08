@@ -3,8 +3,8 @@ Check CN of certificate. (whitelist)
 
 
 #OpenVPN server params
-# Whitelist
-script-security 2
+# Whitelist 
+script-security 2 
 tls-verify "verify-cn.exe CN_list.txt"
 
 #CN_list.txt example
