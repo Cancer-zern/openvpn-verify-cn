@@ -1,5 +1,6 @@
 # verify-cn
-Check CN of certificate. (whitelist)
+Verify CN on OpenVPN (Windows 7/8/10, Windows Server 2012/2016/2019).
+Need to install .net Framework 4.6.1 or more
 
 
 # OpenVPN server params
