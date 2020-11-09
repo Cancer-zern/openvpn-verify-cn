@@ -38,7 +38,6 @@ namespace verify_cn
                     if (uids == uidInput)
                     {
                         //Console.WriteLine("0");
-                        //Console.WriteLine(uidInput);
                         return 0;
                     }
                 }
@@ -46,7 +45,6 @@ namespace verify_cn
 
             //Console.WriteLine("1");
             return 1;
-                       
         }
     }
 
