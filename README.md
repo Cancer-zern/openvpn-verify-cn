@@ -12,6 +12,7 @@ tls-verify "verify-cn.exe CN_list.txt"
 ```
 
 # CN_list.txt example
+
 ```
 server1
 ntserver2
