@@ -1,0 +1,4 @@
+server1
+ntserver2
+TMP: 00000000
+TMP: 12345678
