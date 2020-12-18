@@ -5,8 +5,9 @@ Need to install .net Framework 4.6.1 or newer
 
 
 # OpenVPN server params
-# Whitelist
+
  ```
+ # Whitelist
 script-security 2
 tls-verify "verify-cn.exe CN_list.txt"
 ```
