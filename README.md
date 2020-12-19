@@ -4,6 +4,7 @@ verify-cn is checking CN into the file CN_list.txt and if the CN is there it wil
 # Requrements
 OpenVPN verify CN is working on Windows 7/8/10, Windows Server 2012/2016/2019
 Need to install .net Framework 4.6.1 or newer
+OpenVPN 2.4 or newer
 
 # OpenVPN server params
 
