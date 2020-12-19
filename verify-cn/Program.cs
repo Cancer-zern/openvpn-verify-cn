@@ -1,49 +1,53 @@
 ﻿using System;
 using System.IO;
-using System.Configuration;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace verify_cn
 {
     class Program
     {
+        static void LogWrite(string UidFile, string Depth, string UID, string VpnAction)
+        {
+            string PathLogFolder = @"..\log";
+            if (!Directory.Exists(PathLogFolder))
+            {
+                Directory.CreateDirectory(PathLogFolder);
+            }
+            string PathLogFile = @"..\log\CN_debug.txt";
+            DateTime now = DateTime.Now;
+            string LogText = now.ToString() + ": " + $"FileName = {UidFile}, Depth = {Depth}, UID = {UID}, Action = {VpnAction}" + "\n";
+            System.IO.File.AppendAllText(PathLogFile, LogText);
+        }
         static int Main(string[] args)
 
         {
+            string UidFile = args[0];   // FileName
+            string Depth = args[1];     // Depth
+            string UidInput = args[2];  // CN
+            UidInput = UidInput.Substring(3); // cut 3 first symbols, because ovpn sending CN=CLIENTNAME
 
-            string uidFile = args[0];
-            string depth = args[1];
-            string uidInput = args[2];
-            uidInput = uidInput.Substring(3);
-
-            //debug to console
-            //File.AppendAllText("C:\\tmp\\CN_debug.txt", $"{args[0]} {args[1]} {args[2]}");
-
-            if (depth == "1")
+            if (Depth == "1") // if depth eq 0 need to pass it, because this step is checking CA
             {
-                //Console.WriteLine("0");
                 return 0;
             }
 
-            if (depth == "0")
+            if (Depth == "0")
             {
                                                 
-                var text = File.ReadAllLines(uidFile);
+                var text = File.ReadAllLines(UidFile);
                 foreach (var uids in text)
                 {
-                    
-                    if (uids == uidInput)
+                    if (uids == UidInput)
                     {
-                        //Console.WriteLine("0");
+                        // Logging
+                        string Allow = "Allow";
+                        LogWrite(UidFile, Depth, UidInput, Allow);
                         return 0;
                     }
                 }
             }
-
-            //Console.WriteLine("1");
+            // Logging
+            string Deny = "Deny";
+            LogWrite(UidFile, Depth, UidInput, Deny);
             return 1;
         }
     }
