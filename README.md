@@ -1,8 +1,9 @@
-# verify-cn
-OpenVPN verify CN (Windows 7/8/10, Windows Server 2012/2016/2019)
+# Functionality
+verify-cn is checking CN into the file CN_list.txt and if the CN is there it will accept to connect, else deny.
 
+# Requrements
+OpenVPN verify CN is working on Windows 7/8/10, Windows Server 2012/2016/2019
 Need to install .net Framework 4.6.1 or newer
-
 
 # OpenVPN server params
 
