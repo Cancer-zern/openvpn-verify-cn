@@ -26,6 +26,7 @@ namespace verify_cn
             string Depth = args[1];     // Depth
             string UidInput = args[2];  // CN
             UidInput = UidInput.Substring(3); // cut 3 first symbols, because ovpn sending CN=CLIENTNAME
+            string VpnAction = null;
 
             // if depth eq 1 need to pass it, because this step is checking CA
             if (Depth == "1") 
@@ -42,15 +43,15 @@ namespace verify_cn
                     if (UidList == UidInput)
                     {
                         // Logging
-                        string Allow = "Allow";
-                        LogWrite(UidFile, Depth, UidInput, Allow);
+                        VpnAction += "Allow";
+                        LogWrite(UidFile, Depth, UidInput, VpnAction);
                         return 0;
                     }
                 }
             }
             // Logging
-            string Deny = "Deny";
-            LogWrite(UidFile, Depth, UidInput, Deny);
+            VpnAction += "Deny";
+            LogWrite(UidFile, Depth, UidInput, VpnAction);
             return 1;
         }
     }
